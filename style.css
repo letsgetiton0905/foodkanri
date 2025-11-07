@@ -1,0 +1,124 @@
+body {
+  font-family: sans-serif;
+  padding: 1em;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1, h2 {
+  margin-top: 1em;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+input, select, textarea, button {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#camera {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: black;
+}
+
+#camera video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+ul#inventoryList {
+  list-style: none;
+  padding: 0;
+}
+
+ul#inventoryList li {
+  margin: 0.5em 0;
+  padding: 0.5em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* 保存場所ごとの色分け */
+.fridge {
+  background-color: #e0f7fa;
+}
+
+.freezer {
+  background-color: #ede7f6;
+}
+
+.room {
+  background-color: #fff3e0;
+}
+
+/* 賞味期限が明日までの食品 */
+.alert {
+  color: red;
+  font-weight: bold;
+}
+
+/* レシピ検索ボタン：少し小さめに調整 */
+.recipe-btn {
+  display: inline-block;
+  background-color: #ff9800;
+  color: white;
+  text-decoration: none;
+  padding: 0.4em 0.6em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.recipe-btn:hover {
+  background-color: #f57c00;
+}
+
+/* 削除ボタン（×）：赤背景・白文字・正方形 */
+.delete-square {
+  display: inline-block;
+  width: 2.2em;
+  height: 2.2em;
+  background-color: #e53935;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 2.2em;
+  cursor: pointer;
+}
+
+.delete-square:hover {
+  background-color: #c62828;
+}
+
+/* レシピ検索と削除ボタンを横並びに */
+.action-buttons {
+  display: inline-flex;
+  gap: 0.5em;
+  margin-top: 0.3em;
+  align-items: center;
+}

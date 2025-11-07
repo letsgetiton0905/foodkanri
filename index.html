@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>冷蔵庫在庫管理</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/@ericblade/quagga2@1.7.4/dist/quagga.min.js"></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <h1>🥬 冷蔵庫の食品管理</h1>
+
+  <!-- 在庫表示 -->
+  <section>
+    <h2>📦 在庫一覧</h2>
+    <ul id="inventoryList"></ul>
+  </section>
+
+  <!-- 食品追加フォーム -->
+  <section>
+    <h2>➕ 食品を追加</h2>
+    <label>商品名：<input type="text" id="itemName" /></label>
+    <label>購入日：<input type="date" id="purchaseDate" /></label>
+    <label>賞味期限：<input type="date" id="expiryDate" /></label>
+    <label>保存場所：
+      <select id="storage">
+        <option value="冷蔵庫">冷蔵庫</option>
+        <option value="冷凍庫">冷凍庫</option>
+        <option value="常温">常温</option>
+      </select>
+    </label>
+    <button onclick="addItemManually()">追加</button>
+  </section>
+
+  <!-- バーコード読み取り -->
+  <section>
+    <h2>📷 バーコード読み取り</h2>
+    <button id="cameraToggleBtn" onclick="toggleCamera()">カメラ起動</button>
+    <div id="camera"></div>
+    <textarea id="jan" rows="4" placeholder="JANコードと商品名が表示されます"></textarea>
+  </section>
+</body>
+</html>
