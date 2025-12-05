@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>冷蔵庫在庫管理</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="style.css" />
   <script src="https://unpkg.com/@ericblade/quagga2@1.7.4/dist/quagga.min.js"></script>
-  <script src="./app.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
   <h1>🥬 冷蔵庫の食品管理</h1>
@@ -14,7 +14,14 @@
   <!-- 在庫表示 -->
   <section>
     <h2>📦 在庫一覧</h2>
+
     <ul id="inventoryList"></ul>
+
+    <!-- 一括操作ボタンを在庫リストの下に配置 -->
+    <div id="multiActions">
+      <button onclick="deleteSelectedItems()">選択した項目を削除</button>
+      <button onclick="searchRecipesForSelected()">選択した項目のレシピを検索</button>
+    </div>
   </section>
 
   <!-- 食品追加フォーム -->
@@ -40,9 +47,9 @@
     <div id="camera"></div>
     <textarea id="jan" rows="4" placeholder="JANコードと商品名が表示されます"></textarea>
   </section>
+
+  <footer>
+    ※レシピリンクはクックパッドの検索結果ページに移動します。内容はCookpadの提供によるものです。
+  </footer>
 </body>
 </html>
-<footer style="margin-top: 2em; font-size: 0.9em; color: gray; text-align: center;">
-  ※レシピリンクはクックパッドの検索結果ページに移動します。内容はCookpadの提供によるものです。
-</footer>
-
