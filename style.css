@@ -54,7 +54,6 @@ ul#inventoryList {
   padding: 0;
 }
 
-/* li を flex で横並びにして高さを揃える */
 ul#inventoryList li {
   display: flex;
   align-items: center;
@@ -63,32 +62,26 @@ ul#inventoryList li {
   padding: 0.5em;
   border: 1px solid #ddd;
   border-radius: 4px;
+  flex-wrap: wrap;
 }
 
-ul#inventoryList li label {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
+ul#inventoryList li span {
   flex: 1;
+  min-width: 150px;
 }
 
-/* ボタン群を右端に固定 */
 ul#inventoryList li .action-buttons {
   display: flex;
   gap: 0.5em;
   align-items: center;
-  margin-left: 1em;
 }
 
-/* 保存場所ごとの色分け */
 .fridge { background-color: #e0f7fa; }
 .freezer { background-color: #ede7f6; }
 .room { background-color: #fff3e0; }
 
-/* 賞味期限が明日まで */
 .alert { color: red; font-weight: bold; }
 
-/* レシピボタン */
 .recipe-btn {
   display: flex;
   justify-content: center;
@@ -104,7 +97,6 @@ ul#inventoryList li .action-buttons {
 }
 .recipe-btn:hover { background-color: #f57c00; }
 
-/* 削除ボタン */
 .delete-square {
   display: flex;
   justify-content: center;
@@ -121,8 +113,4 @@ ul#inventoryList li .action-buttons {
 }
 .delete-square:hover { background-color: #c62828; }
 
-/* ボタン横並び */
-.action-buttons { display: inline-flex; gap: 0.5em; margin-top: 0.3em; align-items: center; }
-
-/* 一括操作ボタン初期非表示 */
 #multiActions { display: none; margin-bottom: 1em; }
