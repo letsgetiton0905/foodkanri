@@ -8,7 +8,6 @@ body {
 h1, h2 {
   margin-top: 1em;
   color: #2c3e50;
-  text-decoration: none;
 }
 
 input, select, textarea, button {
@@ -27,6 +26,8 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  font-size: 1.2em;
+  padding: 0.8em 1.2em;
 }
 
 button:hover {
@@ -53,72 +54,75 @@ ul#inventoryList {
   padding: 0;
 }
 
+/* li を flex で横並びにして高さを揃える */
 ul#inventoryList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 0.5em 0;
   padding: 0.5em;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
+ul#inventoryList li label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex: 1;
+}
+
+/* ボタン群を右端に固定 */
+ul#inventoryList li .action-buttons {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  margin-left: 1em;
+}
+
 /* 保存場所ごとの色分け */
-.fridge {
-  background-color: #e0f7fa;
-}
+.fridge { background-color: #e0f7fa; }
+.freezer { background-color: #ede7f6; }
+.room { background-color: #fff3e0; }
 
-.freezer {
-  background-color: #ede7f6;
-}
+/* 賞味期限が明日まで */
+.alert { color: red; font-weight: bold; }
 
-.room {
-  background-color: #fff3e0;
-}
-
-/* 賞味期限が明日までの食品 */
-.alert {
-  color: red;
-  font-weight: bold;
-}
-
-/* レシピ検索ボタン：少し小さめに調整 */
+/* レシピボタン */
 .recipe-btn {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #ff9800;
   color: white;
   text-decoration: none;
-  padding: 0.4em 0.6em;
-  border-radius: 4px;
-  font-size: 0.9em;
-  text-align: center;
+  width: 3em;
+  height: 3em;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
 }
+.recipe-btn:hover { background-color: #f57c00; }
 
-.recipe-btn:hover {
-  background-color: #f57c00;
-}
-
-/* 削除ボタン（×）：赤背景・白文字・正方形 */
+/* 削除ボタン */
 .delete-square {
-  display: inline-block;
-  width: 2.2em;
-  height: 2.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5em;
+  height: 2.5em;
   background-color: #e53935;
   color: white;
   font-size: 1.2em;
   font-weight: bold;
   border: none;
   border-radius: 6px;
-  text-align: center;
-  line-height: 2.2em;
   cursor: pointer;
 }
+.delete-square:hover { background-color: #c62828; }
 
-.delete-square:hover {
-  background-color: #c62828;
-}
+/* ボタン横並び */
+.action-buttons { display: inline-flex; gap: 0.5em; margin-top: 0.3em; align-items: center; }
 
-/* レシピ検索と削除ボタンを横並びに */
-.action-buttons {
-  display: inline-flex;
-  gap: 0.5em;
-  margin-top: 0.3em;
-  align-items: center;
-}
+/* 一括操作ボタン初期非表示 */
+#multiActions { display: none; margin-bottom: 1em; }
